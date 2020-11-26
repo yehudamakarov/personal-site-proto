@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pinnedRepository;
+option go_package = "github.com/yehudamakarov/personal-site-proto/packages/go/pinnedRepository";
+
+message pinnedRepository {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  bool isCurrent = 4;
+  repeated string tagIds = 5;
+}
