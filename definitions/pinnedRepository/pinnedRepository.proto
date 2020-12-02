@@ -1,12 +1,20 @@
 syntax = "proto3";
 
 package pinnedRepository;
+
+import "gogoproto/gogo.proto";
+
 option go_package = "github.com/yehudamakarov/personal-site-proto/packages/go/pinnedRepository";
 
 message pinnedRepository {
-  string id = 1;
+    string id = 1 [(gogoproto.customtype) = "go.mongodb.org/mongo-driver/bson/primitive.ObjectID", (gogoproto.nullable) = false, (gogoproto.moretags) = "bson:\"_id\""];
+//  string Id = 1;
   string name = 2;
   string description = 3;
-  bool isCurrent = 4;
+  //  bool isCurrent = 4;
   repeated string tagIds = 5;
+}
+
+service PinnedRepository {
+  rpc Get(pinnedRepository) returns (pinnedRepository) {}
 }

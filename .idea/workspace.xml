@@ -21,6 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c6f0394e-176a-4ca2-84b2-b56f4fb1bc00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/definitions/pinnedRepository/pinnedRepository.proto" beforeDir="false" afterPath="$PROJECT_DIR$/definitions/pinnedRepository/pinnedRepository.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/go/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/packages/go/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/go/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/packages/go/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/go/pinnedRepository/pinnedRepository.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/go/pinnedRepository/pinnedRepository.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protoc-script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/protoc-script.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +53,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="go.sdk" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -80,6 +89,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -92,5 +102,9 @@
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
     <state x="2247" y="520" key="#Go_Modules/-2560.0.2560.1440/0.0.3440.1440/3440.204.1680.1050@0.0.3440.1440" timestamp="1606417530644" />
+    <state x="2022" y="268" key="SettingsEditor" timestamp="1606884808828">
+      <screen x="0" y="0" width="3440" height="1440" />
+    </state>
+    <state x="2022" y="268" key="SettingsEditor/-2560.0.2560.1440/0.0.3440.1440/3440.204.1680.1050@0.0.3440.1440" timestamp="1606884808828" />
   </component>
 </project>
