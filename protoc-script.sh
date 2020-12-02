@@ -16,7 +16,7 @@
 #  -I=. -I="$GOPATH"/src -I="$GOPATH"/src/github.com/gogo/protobuf/protobuf \
 protoc \
   --proto_path=definitions \
-  --proto_path=/Users/yehudamakarov/go/pkg/mod/github.com/gogo/protobuf@v1.3.1 \
+  --proto_path="$GOPATH"/pkg/mod/github.com/gogo/protobuf@v1.3.1 \
   --plugin=$(command -v protoc-gen-gogo) \
   --gogo_opt=paths=source_relative \
   --gogo_out=plugins=grpc:packages/go \
