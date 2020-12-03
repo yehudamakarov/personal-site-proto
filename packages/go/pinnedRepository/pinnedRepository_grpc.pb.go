@@ -17,7 +17,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PinnedRepositoryClient interface {
-	Get(ctx context.Context, in *PinnedRepository, opts ...grpc.CallOption) (*PinnedRepository, error)
+	Sync(ctx context.Context, in *SyncPinnedRepositoryRequest, opts ...grpc.CallOption) (*SyncPinnedRepositoryResponse, error)
 }
 
 type pinnedRepositoryClient struct {
@@ -28,13 +28,13 @@ func NewPinnedRepositoryClient(cc grpc.ClientConnInterface) PinnedRepositoryClie
 	return &pinnedRepositoryClient{cc}
 }
 
-var pinnedRepositoryGetStreamDesc = &grpc.StreamDesc{
-	StreamName: "Get",
+var pinnedRepositorySyncStreamDesc = &grpc.StreamDesc{
+	StreamName: "Sync",
 }
 
-func (c *pinnedRepositoryClient) Get(ctx context.Context, in *PinnedRepository, opts ...grpc.CallOption) (*PinnedRepository, error) {
-	out := new(PinnedRepository)
-	err := c.cc.Invoke(ctx, "/pinnedRepository.PinnedRepository/Get", in, out, opts...)
+func (c *pinnedRepositoryClient) Sync(ctx context.Context, in *SyncPinnedRepositoryRequest, opts ...grpc.CallOption) (*SyncPinnedRepositoryResponse, error) {
+	out := new(SyncPinnedRepositoryResponse)
+	err := c.cc.Invoke(ctx, "/pinnedRepository.PinnedRepository/Sync", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,23 +46,23 @@ func (c *pinnedRepositoryClient) Get(ctx context.Context, in *PinnedRepository, 
 // RegisterPinnedRepositoryService is called.  Any unassigned fields will result in the
 // handler for that method returning an Unimplemented error.
 type PinnedRepositoryService struct {
-	Get func(context.Context, *PinnedRepository) (*PinnedRepository, error)
+	Sync func(context.Context, *SyncPinnedRepositoryRequest) (*SyncPinnedRepositoryResponse, error)
 }
 
-func (s *PinnedRepositoryService) get(_ interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PinnedRepository)
+func (s *PinnedRepositoryService) sync(_ interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncPinnedRepositoryRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return s.Get(ctx, in)
+		return s.Sync(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     s,
-		FullMethod: "/pinnedRepository.PinnedRepository/Get",
+		FullMethod: "/pinnedRepository.PinnedRepository/Sync",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return s.Get(ctx, req.(*PinnedRepository))
+		return s.Sync(ctx, req.(*SyncPinnedRepositoryRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -70,17 +70,17 @@ func (s *PinnedRepositoryService) get(_ interface{}, ctx context.Context, dec fu
 // RegisterPinnedRepositoryService registers a service implementation with a gRPC server.
 func RegisterPinnedRepositoryService(s grpc.ServiceRegistrar, srv *PinnedRepositoryService) {
 	srvCopy := *srv
-	if srvCopy.Get == nil {
-		srvCopy.Get = func(context.Context, *PinnedRepository) (*PinnedRepository, error) {
-			return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+	if srvCopy.Sync == nil {
+		srvCopy.Sync = func(context.Context, *SyncPinnedRepositoryRequest) (*SyncPinnedRepositoryResponse, error) {
+			return nil, status.Errorf(codes.Unimplemented, "method Sync not implemented")
 		}
 	}
 	sd := grpc.ServiceDesc{
 		ServiceName: "pinnedRepository.PinnedRepository",
 		Methods: []grpc.MethodDesc{
 			{
-				MethodName: "Get",
-				Handler:    srvCopy.get,
+				MethodName: "Sync",
+				Handler:    srvCopy.sync,
 			},
 		},
 		Streams:  []grpc.StreamDesc{},
@@ -99,9 +99,9 @@ func RegisterPinnedRepositoryService(s grpc.ServiceRegistrar, srv *PinnedReposit
 func NewPinnedRepositoryService(s interface{}) *PinnedRepositoryService {
 	ns := &PinnedRepositoryService{}
 	if h, ok := s.(interface {
-		Get(context.Context, *PinnedRepository) (*PinnedRepository, error)
+		Sync(context.Context, *SyncPinnedRepositoryRequest) (*SyncPinnedRepositoryResponse, error)
 	}); ok {
-		ns.Get = h.Get
+		ns.Sync = h.Sync
 	}
 	return ns
 }
@@ -111,5 +111,5 @@ func NewPinnedRepositoryService(s interface{}) *PinnedRepositoryService {
 // definition, which is not a backward-compatible change.  For this reason,
 // use of this type is not recommended.
 type UnstablePinnedRepositoryService interface {
-	Get(context.Context, *PinnedRepository) (*PinnedRepository, error)
+	Sync(context.Context, *SyncPinnedRepositoryRequest) (*SyncPinnedRepositoryResponse, error)
 }

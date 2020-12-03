@@ -4,15 +4,26 @@ package pinnedRepository;
 
 option go_package = "github.com/yehudamakarov/personal-site-proto/packages/go/pinnedRepository";
 
+enum RequestType {
+  STANDARD = 0;
+}
+
 message pinnedRepository {
   string id = 1 ;
-  //  string Id = 1;
   string name = 2;
   string description = 3;
   //  bool isCurrent = 4;
   repeated string tagIds = 5;
 }
 
+message syncPinnedRepositoryRequest {
+  RequestType requestType = 1;
+}
+
+message syncPinnedRepositoryResponse {
+  bool success = 1;
+}
+
 service PinnedRepository {
-  rpc Get(pinnedRepository) returns (pinnedRepository) {}
+  rpc Sync(syncPinnedRepositoryRequest) returns (syncPinnedRepositoryResponse) {}
 }
