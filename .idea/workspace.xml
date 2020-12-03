@@ -21,9 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6f0394e-176a-4ca2-84b2-b56f4fb1bc00" name="Default Changelist" comment="paramaterize gopath">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/definitions/pinnedRepository/pinnedRepository.proto" beforeDir="false" afterPath="$PROJECT_DIR$/definitions/pinnedRepository/pinnedRepository.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/go/pinnedRepository/pinnedRepository.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protoc-script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/protoc-script.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
