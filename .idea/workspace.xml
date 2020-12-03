@@ -19,12 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6f0394e-176a-4ca2-84b2-b56f4fb1bc00" name="Default Changelist" comment="">
+    <list default="true" id="c6f0394e-176a-4ca2-84b2-b56f4fb1bc00" name="Default Changelist" comment="paramaterize gopath">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/definitions/pinnedRepository/pinnedRepository.proto" beforeDir="false" afterPath="$PROJECT_DIR$/definitions/pinnedRepository/pinnedRepository.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/go/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/packages/go/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/go/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/packages/go/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/go/pinnedRepository/pinnedRepository.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/go/pinnedRepository/pinnedRepository.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/go/pinnedRepository/pinnedRepository.pb.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/protoc-script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/protoc-script.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +32,11 @@
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GoLibraries">
@@ -93,6 +96,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="gogo protobuf making bson tag. need to test and clean up if necessary" />
+    <MESSAGE value="paramaterize gopath" />
+    <option name="LAST_COMMIT_MESSAGE" value="paramaterize gopath" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -106,5 +112,9 @@
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
     <state x="2022" y="268" key="SettingsEditor/-2560.0.2560.1440/0.0.3440.1440/3440.204.1680.1050@0.0.3440.1440" timestamp="1606884808828" />
+    <state x="1220" y="394" key="Vcs.Push.Dialog.v2" timestamp="1606890942126">
+      <screen x="0" y="0" width="3440" height="1440" />
+    </state>
+    <state x="1220" y="394" key="Vcs.Push.Dialog.v2/-2560.0.2560.1440/0.0.3440.1440/3440.204.1680.1050@0.0.3440.1440" timestamp="1606890942126" />
   </component>
 </project>
