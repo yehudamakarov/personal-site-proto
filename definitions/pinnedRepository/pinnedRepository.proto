@@ -9,11 +9,15 @@ enum RequestType {
 }
 
 message pinnedRepository {
-  string id = 1 ;
+  int32 id = 1;
   string name = 2;
   string description = 3;
-  //  bool isCurrent = 4;
-  repeated string tagIds = 5;
+  int32 databaseId = 4;
+  string url = 5;
+  string createdAt = 6;
+  string updatedAt = 7;
+  bool isCurrent = 8;
+  repeated string tagIds = 9;
 }
 
 message syncPinnedRepositoryRequest {
