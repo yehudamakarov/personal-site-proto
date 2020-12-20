@@ -9,7 +9,7 @@ enum RequestType {
 }
 
 message pinnedRepository {
-  int32 id = 1;
+  int32 pinnedRepositoryId = 1;
   string name = 2;
   string description = 3;
   int32 databaseId = 4;
